@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+         "type": "java",
+         "name": "Test",
+         "request": "launch",
+         "mainClass": "Test",
+         "projectName": "405Project_1ecc2b23"
+      },
+      {
+         "type": "java",
+         "name": "Launch Main",
+         "request": "launch",
+         "mainClass": "Main",
+         "vmArgs": "--module-path \"C:/Users/Yousef Bakhsh/Desktop/School/405/Group Project/405Project/javafx-sdk-17.0.13/lib\" --add-modules javafx.controls,javafx.fxml"
+      }
+   ]
+ }
+ 
