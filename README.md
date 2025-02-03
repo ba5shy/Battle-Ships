@@ -13,3 +13,8 @@
 ### Joining a game
 #### Players who choose to join a friend (who is hosting a game) must enter a username, a port number and an IP address
 ![Hosting Game](src/images/github_images/join_server.png)
+
+### Gameplay
+#### Players continue playing until one of them wins!
+![Hosting Game](src/images/github_images/game_1.png)
+![Hosting Game](src/images/github_images/game_2.png)
