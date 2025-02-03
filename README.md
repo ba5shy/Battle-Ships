@@ -6,6 +6,10 @@
 ![Welcome Screen](src/images/github_images/welcome_screen.png)
 
 ### Hosting a game
-#### The player that hosts the server must enter a port number
+#### The player that hosts the server must enter a username and a port number
 ![Hosting Game](src/images/github_images/hosting_game.png)
 ![Server Wait](src/images/github_images/server_wait.png)
+
+### Joining a game
+#### Players who choose to join a friend (who is hosting a game) must enter a username, a port number and an IP address
+![Hosting Game](src/images/github_images/join_server.png)
