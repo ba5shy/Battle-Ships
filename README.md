@@ -7,5 +7,5 @@
 
 ### Hosting a game
 #### The player that hosts the server must enter a port number
-![Welcome Screen](src/images/github_images/host_server.png)
-![Welcome Screen](src/images/github_images/server_wait.png)
+![Hosting Game](src/images/github_images/hosting_game.png)
+![Server Wait](src/images/github_images/server_wait.png)
