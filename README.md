@@ -93,8 +93,21 @@ PLACEHOLDERS — drop new screenshots into src/images/github_images/ and uncomme
 ### Prerequisites
 
 - **JDK 17** or newer
-- The **JavaFX SDK** — a copy (`javafx-sdk-17.0.13`) is bundled in this repository, so no separate
-  download is required
+- The **JavaFX SDK** matching your platform. The `javafx-sdk-17.0.13` folder bundled in this repository
+  only ships the Windows native `bin/` files (no `lib/`), so you'll need to download the full SDK for your
+  own platform from [gluonhq.com/products/javafx](https://gluonhq.com/products/javafx/).
+
+**Windows (PowerShell):**
+```powershell
+Invoke-WebRequest -Uri "https://download2.gluonhq.com/openjfx/17.0.13/openjfx-17.0.13_windows-x64_bin-sdk.zip" -OutFile "javafx-windows.zip"
+Expand-Archive -Path "javafx-windows.zip" -DestinationPath "javafx-windows"
+```
+
+**Linux / WSL:**
+```bash
+wget https://download2.gluonhq.com/openjfx/17.0.13/openjfx-17.0.13_linux-x64_bin-sdk.zip
+unzip openjfx-17.0.13_linux-x64_bin-sdk.zip -d javafx-linux
+```
 
 ### Clone
 
@@ -105,22 +118,38 @@ cd Battle-Ships
 
 ### Compile
 
+**Windows (PowerShell / cmd):**
+```powershell
+javac --module-path javafx-windows\javafx-sdk-17.0.13\lib ^
+      --add-modules javafx.controls,javafx.fxml ^
+      -d bin (Get-ChildItem -Recurse -Filter *.java src | % { $_.FullName })
+```
+
+**Linux / WSL:**
 ```bash
-javac --module-path javafx-sdk-17.0.13/lib \
+javac --module-path javafx-linux/javafx-sdk-17.0.13/lib \
       --add-modules javafx.controls,javafx.fxml \
       -d bin $(find src -name "*.java")
 ```
 
 ### Run
 
+**Windows (PowerShell / cmd):**
+```powershell
+java --module-path javafx-windows\javafx-sdk-17.0.13\lib ^
+     --add-modules javafx.controls,javafx.fxml ^
+     -cp bin Main
+```
+
+**Linux / WSL:**
 ```bash
-java --module-path javafx-sdk-17.0.13/lib \
+java --module-path javafx-linux/javafx-sdk-17.0.13/lib \
      --add-modules javafx.controls,javafx.fxml \
      -cp bin Main
 ```
 
 > **Note:** replace `Main` with the fully-qualified name of the application's entry class if it lives
-> inside a package. On Windows, swap `/` for `\` in the module path and use `;` as the classpath separator.
+> inside a package. Windows uses `;` as the classpath separator (already reflected above via `-cp bin`).
 
 ### Running in VS Code
 
